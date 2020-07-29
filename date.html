@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    倒计时：
+    <span></span>天 <span></span>时 <span></span>分 <span></span>秒
+    <script>
+        // var date=new Date();
+        // console.dir(date)
+        var timeElm=document.querySelectorAll("span");
+        var end = new Date(2020,7,1,10,10,20);
+        var endTime=end.getTime()/1000;
+        setInterval(function(){
+            var current=new Date();
+            var currentTime=current.getTime()/1000;
+            var diff=endTime-currentTime;
+
+            var day=parseInt(diff/(60*60*24));
+            diff%=(60*60*24);
+            var hours=parseInt(diff/(60*60));
+            diff%=60*60;
+            var mins=parseInt(diff/60);
+            diff%=60;
+            var sed=parseInt(diff);
+
+            timeElm[0].innerHTML=day;
+            timeElm[1].innerHTML=hours;
+            timeElm[2].innerHTML=mins;
+            timeElm[3].innerHTML=sed;
+
+        },1000)
+    </script>
+</body>
+</html>

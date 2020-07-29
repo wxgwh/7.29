@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock-box{
+            width: 260px;
+            height: 260px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #000;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: linear-gradient(#ccc,#000);
+        }
+        .clock{
+            width: 200px;
+            height: 200px;
+            box-shadow: 0 0 20px #000;
+            border-radius: 50%;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #fff;
+            box-shadow: 0 0 5px #000 inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-box">
+        <div class="clock">
+
+        </div>
+    </div>
+
+    <script>
+        var clock=document.querySelector(".clock");
+        function createMark(){
+            for(var i=0;i<60;i++){
+                var div=document.createElement("div");
+                div.style.cssText="width:8px;height:20px;background:#000;position:absolute;left:50%;top:0;transformOrigin:center 100px;";div.style.transform="rotate("+i*6+"deg);";
+                clock.appendChild(div);
+            }
+        }
+        createMark();
+    </script>
+</body>
+</html>
